@@ -1,0 +1,217 @@
+
+html body {
+height: 100vh;
+margin: 0;
+display: flex;
+flex-direction: column;
+background-color: rgb(189, 189, 177);
+font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+background-color: rgb(80, 84, 92);
+display: flex;
+color: white;
+justify-content: flex-start;
+padding-left: 15px;
+}
+
+h1 {
+display: flex;
+align-items: center;
+padding-left: 15px;
+font-size: 60px;    
+}
+
+
+.fotoweltLogo {
+display: flex;
+margin: 10px;
+width: 130px;
+height: 130px;
+}
+
+h2 {
+display: flex;
+justify-content: center;
+padding-top: 20px;
+font-size: 30px;
+color: rgb(80, 84, 92);
+font-family:Arial, Helvetica, sans-serif;
+text-decoration-line: underline;
+}
+
+/* main section */
+
+main{
+flex: 1;                        /* In der Section Main wird Flex: 1; vergeben wodurch sich der Contaioner den Platz nimmt den er braucht! */
+}
+
+.content {
+display: flex;
+justify-content: center;
+}
+
+
+.contentimg{
+display:flex;
+justify-content: center;
+flex-wrap: wrap;                /* Mit flex-wrap wird der content untereinander angezeigt, unabhängig von der Anzahl! */
+width: 90%;
+gap: 10px;
+padding-top: 50px;
+}
+
+.contentimg img{
+width: 250px;
+height: 250px;
+border-radius: 10px;
+}
+
+.contentimg img:hover{
+cursor: pointer;
+filter: drop-shadow(0px 0px 4px #FFFFFF);
+}
+
+/* Footer Section */
+
+footer {
+display: flex;
+justify-content: space-between; 
+align-items: center;
+box-sizing: border-box;         /* Mit box-sizing wird das Padding vom Container Subtrahiert! */
+width: 100%;
+padding: 15px 30px;
+background-color: rgb(80, 84, 92);
+color: white;
+}
+
+.footerimg{
+width: 60px;
+height: 60px;
+}
+
+.footerdescription{
+margin: 0;
+text-align: center;
+font-size: 13px;
+padding-top: 50px;
+}
+
+.footerhover:hover{
+cursor: pointer;
+filter: drop-shadow(0px 0px 4px #FFFFFF);
+}
+
+
+/* JS Style - Lightbox-Galerie */
+
+.lightbox {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.8);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+z-index: 1000;  /* Der Wert z-index: 1000 bestimmt, wie weit vorne ein Element im „Stapel“ der Webseite angezeigt wird. */
+}
+  
+.lightbox-image {
+max-width: 600px;
+max-height: 600px;
+border-radius: 15px;
+object-fit: cover;
+box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+transition: transform 0.3s ease;
+}
+  
+.lightbox-image.active {
+transform: scale(1.03);
+}
+  
+.lightbox-caption {
+color: rgb(80, 80, 94);
+text-align: center;
+font-size: 16px;
+margin-top: 15px;
+max-width: 80%;
+line-height: 1.4;
+font-weight: bold;
+background: rgb(189, 189, 177);
+padding: 5px;
+border-radius: 10px;
+}
+  
+  /* Lightbox - Button */
+  
+.lightbox button {
+background: none;
+border: none;
+color: white;
+font-size: 4rem;
+cursor: pointer;
+padding: 10px;
+transition: color 0.2s; /* Der Wert transition color z.B. 0.2s - gibt vor wie schnell sich die Farbe innerhalb des Button ändert!*/
+}
+  
+.lightbox button:hover {
+color: rgb(80, 84, 94);
+}
+  
+.lightbox-close {
+position: absolute;
+top: 20px;
+right: 30px;
+font-size: 2.5rem;
+}
+  
+.lightbox-prev,
+.lightbox-next {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);    /* Der Pfeil wird exakt mittig platziert!  */
+font-size: 3rem;    /* Größe des Pfeils */
+padding: 10px;
+}
+  
+.lightbox-prev {
+left: 40px;
+}
+  
+.lightbox-next {
+right: 40px;
+}
+
+/* Responsive @media */
+
+@media (max-width: 900px){
+.lightbox-image {max-width: 300px; height: 300px;}    
+.lightbox-button {font-size: 2rem;}
+}
+
+@media (max-width: 700px){
+h2 {font-size: 20px;}
+}
+
+@media (max-width: 500px){
+header {display: flex; justify-content: center;}
+h1 {font-size: 40px; }
+h2 {font-size: 15px; padding: 10%; text-align: center;}
+.fotoweltLogo {width: 90px; height: 90px;}
+.socialsection img{width: 20px; height: 20px; }
+.maillogo {display: none;}
+.footerimg {width: 30px; height: 30px;}
+.footerdescription {font-size: 8px;}
+.lightbox-next {right: 10px;}
+.lightbox-prev {left: 10px;}
+}
+
+@media (max-width: 400px){
+h1 {font-size: 30px;}
+.fotoweltLogo {width: 60px; height: 60px;}
+h2 {padding: 20%; text-align: center;}    
+}
